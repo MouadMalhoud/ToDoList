@@ -70,9 +70,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(242, 359);
+            button1.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(182, 358);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(152, 23);
             button1.TabIndex = 23;
             button1.Text = "Signup";
             button1.UseVisualStyleBackColor = true;
@@ -80,16 +81,18 @@
             // chk_terms
             // 
             chk_terms.AutoSize = true;
-            chk_terms.Location = new Point(188, 322);
+            chk_terms.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            chk_terms.Location = new Point(141, 322);
             chk_terms.Name = "chk_terms";
-            chk_terms.Size = new Size(181, 19);
+            chk_terms.Size = new Size(336, 20);
             chk_terms.TabIndex = 22;
             chk_terms.Text = "I accept the terms of services.";
             chk_terms.UseVisualStyleBackColor = true;
             // 
             // txt_confirmPassword
             // 
-            txt_confirmPassword.Location = new Point(188, 284);
+            txt_confirmPassword.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_confirmPassword.Location = new Point(141, 284);
             txt_confirmPassword.Name = "txt_confirmPassword";
             txt_confirmPassword.PasswordChar = '*';
             txt_confirmPassword.Size = new Size(193, 23);
@@ -97,7 +100,8 @@
             // 
             // txt_password
             // 
-            txt_password.Location = new Point(188, 227);
+            txt_password.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_password.Location = new Point(141, 227);
             txt_password.Name = "txt_password";
             txt_password.PasswordChar = '*';
             txt_password.Size = new Size(193, 23);
@@ -105,7 +109,8 @@
             // 
             // txt_username
             // 
-            txt_username.Location = new Point(188, 169);
+            txt_username.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_username.Location = new Point(141, 169);
             txt_username.Name = "txt_username";
             txt_username.Size = new Size(193, 23);
             txt_username.TabIndex = 19;
@@ -113,42 +118,47 @@
             // lbl_confirmPassword
             // 
             lbl_confirmPassword.AutoSize = true;
-            lbl_confirmPassword.Location = new Point(188, 266);
+            lbl_confirmPassword.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_confirmPassword.Location = new Point(141, 266);
             lbl_confirmPassword.Name = "lbl_confirmPassword";
-            lbl_confirmPassword.Size = new Size(113, 15);
+            lbl_confirmPassword.Size = new Size(197, 16);
             lbl_confirmPassword.TabIndex = 18;
             lbl_confirmPassword.Text = "Confirm password : ";
             // 
             // lbl_password
             // 
             lbl_password.AutoSize = true;
-            lbl_password.Location = new Point(188, 209);
+            lbl_password.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_password.Location = new Point(141, 209);
             lbl_password.Name = "lbl_password";
-            lbl_password.Size = new Size(66, 15);
+            lbl_password.Size = new Size(117, 16);
             lbl_password.TabIndex = 17;
             lbl_password.Text = "Password : ";
             // 
             // lbl_Username
             // 
             lbl_Username.AutoSize = true;
-            lbl_Username.Location = new Point(188, 151);
+            lbl_Username.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_Username.Location = new Point(141, 151);
             lbl_Username.Name = "lbl_Username";
-            lbl_Username.Size = new Size(69, 15);
+            lbl_Username.Size = new Size(117, 16);
             lbl_Username.TabIndex = 16;
             lbl_Username.Text = "Username : ";
             // 
             // lbl_email
             // 
             lbl_email.AutoSize = true;
-            lbl_email.Location = new Point(188, 97);
+            lbl_email.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_email.Location = new Point(141, 97);
             lbl_email.Name = "lbl_email";
-            lbl_email.Size = new Size(81, 15);
+            lbl_email.Size = new Size(157, 16);
             lbl_email.TabIndex = 15;
             lbl_email.Text = "Email adress : ";
             // 
             // txt_email
             // 
-            txt_email.Location = new Point(188, 115);
+            txt_email.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_email.Location = new Point(141, 115);
             txt_email.Name = "txt_email";
             txt_email.Size = new Size(193, 23);
             txt_email.TabIndex = 14;
@@ -157,7 +167,7 @@
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(481, 97);
+            pictureBox1.Location = new Point(493, 97);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(256, 244);
             pictureBox1.TabIndex = 24;
