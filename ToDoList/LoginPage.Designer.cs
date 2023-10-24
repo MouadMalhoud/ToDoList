@@ -109,6 +109,7 @@
             btn_login.TabIndex = 25;
             btn_login.Text = "Login";
             btn_login.UseVisualStyleBackColor = true;
+            btn_login.Click += btn_login_Click;
             // 
             // pictureBox1
             // 

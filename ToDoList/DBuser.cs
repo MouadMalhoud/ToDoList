@@ -40,5 +40,10 @@ namespace ToDoList
                 return "0"; 
             }
         }
+        public User GetUserByUsername(string username)
+        {
+            var filter = Builders<User>.Filter.Eq(u => u.Username, username);
+            return collection.Find(filter).FirstOrDefault();
+        }
     }
 }

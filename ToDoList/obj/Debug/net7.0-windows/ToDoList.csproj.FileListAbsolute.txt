@@ -33,3 +33,4 @@ C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\bin\Debug\net7.0-windows\runtimes\linu
 C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\bin\Debug\net7.0-windows\runtimes\osx\native\libmongocrypt.dylib
 C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\bin\Debug\net7.0-windows\runtimes\win\native\mongocrypt.dll
 C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\obj\Debug\net7.0-windows\ToDoList.csproj.CopyComplete
+C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\obj\Debug\net7.0-windows\ToDoList.TodoPage.resources
