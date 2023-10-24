@@ -4,7 +4,6 @@ C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\bin\Debug\net7.0-windows\ToDoList.runt
 C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\bin\Debug\net7.0-windows\ToDoList.dll
 C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\bin\Debug\net7.0-windows\ToDoList.pdb
 C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\obj\Debug\net7.0-windows\ToDoList.csproj.AssemblyReference.cache
-C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\obj\Debug\net7.0-windows\ToDoList.Form1.resources
 C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\obj\Debug\net7.0-windows\ToDoList.Properties.Resources.resources
 C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\obj\Debug\net7.0-windows\ToDoList.csproj.GenerateResource.cache
 C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\obj\Debug\net7.0-windows\ToDoList.GeneratedMSBuildEditorConfig.editorconfig
@@ -16,3 +15,6 @@ C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\obj\Debug\net7.0-windows\refint\ToDoLi
 C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\obj\Debug\net7.0-windows\ToDoList.pdb
 C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\obj\Debug\net7.0-windows\ToDoList.genruntimeconfig.cache
 C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\obj\Debug\net7.0-windows\ref\ToDoList.dll
+C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\obj\Debug\net7.0-windows\ToDoList.LandingPage.resources
+C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\obj\Debug\net7.0-windows\ToDoList.LoginPage.resources
+C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\obj\Debug\net7.0-windows\ToDoList.SignupPage.resources
