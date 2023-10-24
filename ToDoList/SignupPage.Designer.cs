@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignupPage));
             lbl_titleSignup = new Label();
             btn_backHome = new Button();
-            button1 = new Button();
+            btn_signup = new Button();
             chk_terms = new CheckBox();
             txt_confirmPassword = new TextBox();
             txt_password = new TextBox();
@@ -42,7 +43,13 @@
             lbl_email = new Label();
             txt_email = new TextBox();
             pictureBox1 = new PictureBox();
+            errorProviderConfirmPassword = new ErrorProvider(components);
+            errorProviderTerms = new ErrorProvider(components);
+            errorProviderEmail = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderConfirmPassword).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderTerms).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderEmail).BeginInit();
             SuspendLayout();
             // 
             // lbl_titleSignup
@@ -68,15 +75,15 @@
             btn_backHome.UseVisualStyleBackColor = false;
             btn_backHome.Click += btn_backHome_Click;
             // 
-            // button1
+            // btn_signup
             // 
-            button1.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(182, 358);
-            button1.Name = "button1";
-            button1.Size = new Size(152, 23);
-            button1.TabIndex = 23;
-            button1.Text = "Signup";
-            button1.UseVisualStyleBackColor = true;
+            btn_signup.Font = new Font("Lucida Console", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_signup.Location = new Point(182, 358);
+            btn_signup.Name = "btn_signup";
+            btn_signup.Size = new Size(152, 23);
+            btn_signup.TabIndex = 23;
+            btn_signup.Text = "Signup";
+            btn_signup.UseVisualStyleBackColor = true;
             // 
             // chk_terms
             // 
@@ -88,6 +95,7 @@
             chk_terms.TabIndex = 22;
             chk_terms.Text = "I accept the terms of services.";
             chk_terms.UseVisualStyleBackColor = true;
+            chk_terms.CheckedChanged += chk_terms_CheckedChanged;
             // 
             // txt_confirmPassword
             // 
@@ -97,6 +105,7 @@
             txt_confirmPassword.PasswordChar = '*';
             txt_confirmPassword.Size = new Size(193, 23);
             txt_confirmPassword.TabIndex = 21;
+            txt_confirmPassword.TextChanged += txt_confirmPassword_TextChanged;
             // 
             // txt_password
             // 
@@ -106,6 +115,7 @@
             txt_password.PasswordChar = '*';
             txt_password.Size = new Size(193, 23);
             txt_password.TabIndex = 20;
+            txt_password.TextChanged += txt_password_TextChanged;
             // 
             // txt_username
             // 
@@ -162,6 +172,7 @@
             txt_email.Name = "txt_email";
             txt_email.Size = new Size(193, 23);
             txt_email.TabIndex = 14;
+            txt_email.TextChanged += txt_email_TextChanged;
             // 
             // pictureBox1
             // 
@@ -173,13 +184,25 @@
             pictureBox1.TabIndex = 24;
             pictureBox1.TabStop = false;
             // 
+            // errorProviderConfirmPassword
+            // 
+            errorProviderConfirmPassword.ContainerControl = this;
+            // 
+            // errorProviderTerms
+            // 
+            errorProviderTerms.ContainerControl = this;
+            // 
+            // errorProviderEmail
+            // 
+            errorProviderEmail.ContainerControl = this;
+            // 
             // SignupPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(pictureBox1);
-            Controls.Add(button1);
+            Controls.Add(btn_signup);
             Controls.Add(chk_terms);
             Controls.Add(txt_confirmPassword);
             Controls.Add(txt_password);
@@ -194,15 +217,19 @@
             Name = "SignupPage";
             Text = "To do list manager - Sign Up";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderConfirmPassword).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderTerms).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderEmail).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
+
 
         #endregion
 
         private Label lbl_titleSignup;
         private Button btn_backHome;
-        private Button button1;
+        private Button btn_signup;
         private CheckBox chk_terms;
         private TextBox txt_confirmPassword;
         private TextBox txt_password;
@@ -213,5 +240,8 @@
         private Label lbl_email;
         private TextBox txt_email;
         private PictureBox pictureBox1;
+        private ErrorProvider errorProviderConfirmPassword;
+        private ErrorProvider errorProviderTerms;
+        private ErrorProvider errorProviderEmail;
     }
 }
