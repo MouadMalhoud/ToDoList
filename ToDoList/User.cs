@@ -1,24 +1,60 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace ToDoList
 {
     public class User
     {
-        private string username { get; set; }
-        private string email { get; set; }
-        private DateTime dateJoined { get; set; }
-        private string password { get; set; }
+        [BsonId]
+        private string _id;
+        private string _username;
+        private string _email;
+        private DateTime _dateJoined;
+        private string _password;
 
-        public User(string _username, string _email, DateTime _dateJoined, string _password)
+        [BsonElement("Id")] 
+        public string Id
         {
-            username = _username;
-            email = _email;
-            dateJoined = _dateJoined;
-            password = _password;
+            get => _id;
+            private set => _id = value;
+        }
+
+        public string Username
+        {
+            get => _username;
+            private set => _username = value;
+        }
+
+        public string Email
+        {
+            get => _email;
+            private set => _email = value;
+        }
+
+        public DateTime DateJoined
+        {
+            get => _dateJoined;
+            private set => _dateJoined = value;
+        }
+
+        public string Password
+        {
+            get => _password;
+            private set => _password = value;
+        }
+
+        public User(string id, string username, string email, DateTime dateJoined, string password)
+        {
+            _id = id;
+            _username = username;
+            _email = email;
+            _dateJoined = dateJoined;
+            _password = password;
+        }
+        public override string ToString()
+        {
+            return Id +" "+ Username +" "+ Email +" "+ DateJoined +" "+ Password;
         }
     }
 }

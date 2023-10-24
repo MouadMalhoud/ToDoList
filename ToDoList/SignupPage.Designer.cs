@@ -84,6 +84,7 @@
             btn_signup.TabIndex = 23;
             btn_signup.Text = "Signup";
             btn_signup.UseVisualStyleBackColor = true;
+            btn_signup.Click += btn_signup_Click;
             // 
             // chk_terms
             // 

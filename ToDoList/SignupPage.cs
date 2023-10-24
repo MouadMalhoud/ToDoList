@@ -18,6 +18,40 @@ namespace ToDoList
             UpdateSignupButtonState();
 
         }
+        private void btn_signup_Click(object sender, EventArgs e)
+        {
+            if (IsEmailValid(txt_email.Text) && ArePasswordsMatching(txt_password.Text, txt_confirmPassword.Text) && chk_terms.Checked)
+            {
+                string lastUserIdStr = Program.DatabaseConnection.GetLastUserId();
+                int lastUserId;
+
+                if (int.TryParse(lastUserIdStr, out lastUserId))
+                {
+                    int newUserId = lastUserId + 1;
+                    string newUserIdStr = newUserId.ToString();
+
+
+                    User newUser = new User(newUserIdStr, txt_username.Text, txt_email.Text, DateTime.Now, txt_password.Text);
+                    Console.WriteLine(newUser.ToString());
+                    Program.DatabaseConnection.CreateUser(newUser);
+
+                    MessageBox.Show("Inscription Confirmed ! You can now login ! Have fun !");
+
+                    LandingPage landingPage = new LandingPage();
+                    landingPage.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Error when converting the id.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all the entries correctly.");
+            }
+        }
+
 
         private void btn_backHome_Click(object sender, EventArgs e)
         {
@@ -104,7 +138,5 @@ namespace ToDoList
             UpdateSignupButtonState();
         }
 
-
- 
     }
 }
