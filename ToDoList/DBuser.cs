@@ -1,4 +1,5 @@
 ﻿using System;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace ToDoList
@@ -63,7 +64,17 @@ namespace ToDoList
             var filter = Builders<User>.Filter.Eq(u => u.Username, username);
             return collection.Find(filter).FirstOrDefault();
         }
+        public void RemoveTask(string taskId)
+        {
+            IMongoCollection<Task> taskCollection = database.GetCollection<Task>("Tasks");
+
+            var filter = Builders<Task>.Filter.Eq(t => t.Id, new ObjectId(taskId));
+
+            taskCollection.DeleteOne(filter);
+        }
+
+
     }
-    
-   
+
+
 }

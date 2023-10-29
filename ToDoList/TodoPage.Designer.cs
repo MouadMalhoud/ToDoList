@@ -36,6 +36,11 @@
             flow_done = new FlowLayoutPanel();
             btn_addTask = new Button();
             pictureBox1 = new PictureBox();
+            lbl_done = new Label();
+            lbl_inProgress = new Label();
+            label1 = new Label();
+            lbl_todo = new Label();
+            flow_inProgress.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -72,6 +77,7 @@
             // flow_inProgress
             // 
             flow_inProgress.BackColor = Color.Orange;
+            flow_inProgress.Controls.Add(lbl_inProgress);
             flow_inProgress.Location = new Point(415, 94);
             flow_inProgress.Name = "flow_inProgress";
             flow_inProgress.Size = new Size(254, 528);
@@ -84,13 +90,12 @@
             flow_done.Name = "flow_done";
             flow_done.Size = new Size(254, 528);
             flow_done.TabIndex = 5;
-
             // 
             // btn_addTask
             // 
             btn_addTask.Font = new Font("Lucida Console", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btn_addTask.ForeColor = SystemColors.ActiveCaptionText;
-            btn_addTask.Location = new Point(383, 29);
+            btn_addTask.Location = new Point(688, 5);
             btn_addTask.Name = "btn_addTask";
             btn_addTask.Size = new Size(127, 37);
             btn_addTask.TabIndex = 6;
@@ -102,18 +107,65 @@
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(350, 30);
+            pictureBox1.Location = new Point(655, 6);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(37, 36);
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
+            // lbl_done
+            // 
+            lbl_done.AutoSize = true;
+            lbl_done.Font = new Font("Lucida Console", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_done.ForeColor = SystemColors.ActiveCaptionText;
+            lbl_done.Location = new Point(828, 62);
+            lbl_done.Name = "lbl_done";
+            lbl_done.Size = new Size(94, 32);
+            lbl_done.TabIndex = 8;
+            lbl_done.Text = "DONE";
+            // 
+            // lbl_inProgress
+            // 
+            lbl_inProgress.AutoSize = true;
+            lbl_inProgress.Font = new Font("Lucida Console", 26.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_inProgress.ForeColor = SystemColors.ActiveCaptionText;
+            lbl_inProgress.Location = new Point(3, 0);
+            lbl_inProgress.Name = "lbl_inProgress";
+            lbl_inProgress.Size = new Size(191, 70);
+            lbl_inProgress.TabIndex = 9;
+            lbl_inProgress.Text = "IN PROGRESS";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Lucida Console", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ActiveCaptionText;
+            label1.Location = new Point(426, 62);
+            label1.Name = "label1";
+            label1.Size = new Size(234, 32);
+            label1.TabIndex = 9;
+            label1.Text = "IN PROGRESS";
+            // 
+            // lbl_todo
+            // 
+            lbl_todo.AutoSize = true;
+            lbl_todo.Font = new Font("Lucida Console", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_todo.ForeColor = SystemColors.ActiveCaptionText;
+            lbl_todo.Location = new Point(142, 62);
+            lbl_todo.Name = "lbl_todo";
+            lbl_todo.Size = new Size(114, 32);
+            lbl_todo.TabIndex = 10;
+            lbl_todo.Text = "TO DO";
+            // 
             // TodoPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = SystemColors.Window;
             ClientSize = new Size(1107, 652);
+            Controls.Add(lbl_todo);
+            Controls.Add(lbl_done);
+            Controls.Add(label1);
             Controls.Add(pictureBox1);
             Controls.Add(btn_addTask);
             Controls.Add(flow_done);
@@ -125,6 +177,8 @@
             Name = "TodoPage";
             Text = "TodoPage";
             Load += TodoPage_Load;
+            flow_inProgress.ResumeLayout(false);
+            flow_inProgress.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -138,5 +192,9 @@
         private FlowLayoutPanel flow_done;
         private Button btn_addTask;
         private PictureBox pictureBox1;
+        private Label lbl_inProgress;
+        private Label lbl_done;
+        private Label label1;
+        private Label lbl_todo;
     }
 }

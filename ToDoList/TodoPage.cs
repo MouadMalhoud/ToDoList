@@ -42,23 +42,44 @@ namespace ToDoList
 
                 Label lblTitle = new Label();
                 lblTitle.Text = task.Title;
-                lblTitle.Font = new Font("Lucida Console", 12, FontStyle.Bold);
-                lblTitle.Width = 100;
+                lblTitle.Font = new Font("Lucida Console", 18, FontStyle.Bold);
+                lblTitle.Width = 200;
+                lblTitle.Top = 5;
 
                 Label lblDescription = new Label();
                 lblDescription.Text = task.Description;
                 lblDescription.Font = new Font("Lucida Console", 9, FontStyle.Regular);
-                lblDescription.Width = 100;
+                lblDescription.Width = 200;
+                lblDescription.Top = lblTitle.Bottom + 5;
 
                 Label lblDueDate = new Label();
-                lblDueDate.Text = task.DueDate.ToString("MM/dd/yyyy");
+                lblDueDate.Text = "Due for: " + task.DueDate.ToString("MM/dd/yyyy");
                 lblDueDate.Font = new Font("Lucida Console", 9, FontStyle.Regular);
-                lblDueDate.Width = 100;
+                lblDueDate.Width = 200;
+                lblDueDate.Top = lblDescription.Bottom + 5;
 
+                Button btnDelete = new Button();
+                btnDelete.Text = "X";
+                btnDelete.ForeColor = (Color.Black);
+                btnDelete.BackColor = Color.Red;
+                btnDelete.Font = new Font("Lucida Console", 9, FontStyle.Bold);
+                btnDelete.Top = 5;
+                btnDelete.Left = 205;
+                btnDelete.Click += (sender, e) =>
+                {
+                    MongoDB.Bson.ObjectId taskId = task.Id;
+                    string taskIdString = taskId.ToString();
+
+                    DBuser db = new DBuser();
+                    db.RemoveTask(taskIdString);
+
+                    LoadTasksFromDB();
+                };
 
                 taskPanel.Controls.Add(lblTitle);
                 taskPanel.Controls.Add(lblDescription);
                 taskPanel.Controls.Add(lblDueDate);
+                taskPanel.Controls.Add(btnDelete);
 
                 if (task.Status == 0)
                 {
@@ -74,6 +95,8 @@ namespace ToDoList
                 }
             }
         }
+
+
         public void LoadTasksFromDB()
         {
             if (SessionManager.CurrentUser != null)
