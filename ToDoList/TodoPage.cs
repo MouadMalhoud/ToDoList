@@ -23,7 +23,6 @@ namespace ToDoList
         public TodoPage(User user)
         {
             this.user = user;
-            
             InitializeComponent();
         }
 
@@ -43,11 +42,13 @@ namespace ToDoList
 
                 Label lblTitle = new Label();
                 lblTitle.Text = task.Title;
+                lblTitle.ForeColor = Color.Black;
                 lblTitle.Font = new Font("Lucida Console", 18, FontStyle.Bold);
                 lblTitle.Width = 200;
                 lblTitle.Top = 5;
 
                 Label lblDescription = new Label();
+                lblDescription.ForeColor = Color.Black;
                 lblDescription.Text = task.Description;
                 lblDescription.Font = new Font("Lucida Console", 9, FontStyle.Regular);
                 lblDescription.Width = 200;
@@ -56,6 +57,7 @@ namespace ToDoList
                 Label lblDueDate = new Label();
                 lblDueDate.Text = "Due for: " + task.DueDate.ToString("MM/dd/yyyy");
                 lblDueDate.Font = new Font("Lucida Console", 9, FontStyle.Regular);
+                lblDueDate.ForeColor = Color.Black;
                 lblDueDate.Width = 200;
                 lblDueDate.Top = lblDescription.Bottom + 5;
 
