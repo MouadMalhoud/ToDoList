@@ -23,6 +23,7 @@ namespace ToDoList
         public TodoPage(User user)
         {
             this.user = user;
+            
             InitializeComponent();
         }
 
@@ -62,9 +63,10 @@ namespace ToDoList
                 btnDelete.Text = "X";
                 btnDelete.ForeColor = (Color.Black);
                 btnDelete.BackColor = Color.Red;
+                btnDelete.Size = new Size(27, 27);
                 btnDelete.Font = new Font("Lucida Console", 9, FontStyle.Bold);
                 btnDelete.Top = 5;
-                btnDelete.Left = 205;
+                btnDelete.Left = 200;
                 btnDelete.Click += (sender, e) =>
                 {
                     MongoDB.Bson.ObjectId taskId = task.Id;

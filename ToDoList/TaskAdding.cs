@@ -18,6 +18,8 @@ namespace ToDoList
         {
             InitializeComponent();
             this.parentForm = parentForm;
+            comboBox_status.SelectedIndex = 0;
+
         }
 
         private void btn_addTask_Click(object sender, EventArgs e)
