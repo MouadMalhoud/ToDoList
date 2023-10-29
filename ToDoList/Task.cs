@@ -1,34 +1,39 @@
 ﻿using System;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
-public class Task
+namespace ToDoList
 {
-    private string title { get; set; }
-    private string description { get; set; }
-    private DateTime dueDate { get; set; }
-    private int status { get; set; }
-
-    public Task(string _title, string _description, DateTime _dueDate, int _status)
+    public class Task
     {
-        title = _title;
-        description = _description;
-        dueDate = _dueDate;
-        status = _status;
+        [BsonId]
+        private ObjectId Id { get; set; }
+        private string Title { get; set; }
+        private string Description { get; set; }
+        private DateTime DueDate { get; set; }
+        private int Status { get; set; }
+
+        public Task(string title, string description, DateTime dueDate, int status)
+        {
+            Title = title;
+            Description = description;
+            DueDate = dueDate;
+            Status = status;
+        }
+
+        public void MarkAsCompleted()
+        {
+            Status = 2;
+        }
+
+        public void MarkAsTodo()
+        {
+            Status = 0;
+        }
+
+        public void MarkAsInProgress()
+        {
+            Status = 1;
+        }
     }
-
-    public void MarkAsCompleted()
-    {
-        status = 2;
-    }
-
-    public void MarkAsTodo()
-    {
-        status = 0;
-    }
-
-    public void MarkAsInProgress()
-    {
-        status = 1; 
-    }
-
-
 }

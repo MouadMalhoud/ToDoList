@@ -12,6 +12,8 @@ namespace ToDoList
         private string _email;
         private DateTime _dateJoined;
         private string _password;
+        public List<Task> Tasks { get; set; } 
+
 
         [BsonElement("Id")] 
         public string Id
@@ -46,11 +48,12 @@ namespace ToDoList
 
         public User(string id, string username, string email, DateTime dateJoined, string password)
         {
-            _id = id;
-            _username = username;
-            _email = email;
-            _dateJoined = dateJoined;
-            _password = password;
+            Id = id;
+            Username = username;
+            Email = email;
+            DateJoined = dateJoined;
+            Password = password;
+            Tasks = new List<Task>(); 
         }
         public override string ToString()
         {

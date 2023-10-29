@@ -127,6 +127,7 @@
             btn_addTask.TabIndex = 8;
             btn_addTask.Text = "Add task";
             btn_addTask.UseVisualStyleBackColor = true;
+            btn_addTask.Click += btn_addTask_Click;
             // 
             // txt_taskName
             // 

@@ -15,6 +15,16 @@ namespace ToDoList
             database = client.GetDatabase("Todolist");
             collection = database.GetCollection<User>("Users");
         }
+        public void AddTask(string userId, Task task)
+        {
+            IMongoCollection<Task> taskCollection = database.GetCollection<Task>("Tasks");
+
+            taskCollection.InsertOne(task);
+
+            var filter = Builders<User>.Filter.Eq(u => u.Id, userId);
+            var update = Builders<User>.Update.Push(u => u.Tasks, task);
+            collection.UpdateOne(filter, update);
+        }
 
         public void CreateUser(User user)
         {
@@ -46,4 +56,6 @@ namespace ToDoList
             return collection.Find(filter).FirstOrDefault();
         }
     }
+    
+   
 }

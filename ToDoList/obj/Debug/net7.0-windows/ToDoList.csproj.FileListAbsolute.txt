@@ -34,3 +34,4 @@ C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\bin\Debug\net7.0-windows\runtimes\osx\
 C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\bin\Debug\net7.0-windows\runtimes\win\native\mongocrypt.dll
 C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\obj\Debug\net7.0-windows\ToDoList.csproj.CopyComplete
 C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\obj\Debug\net7.0-windows\ToDoList.TodoPage.resources
+C:\ProjetsInfo\ToDoList\ToDoList\ToDoList\obj\Debug\net7.0-windows\ToDoList.TaskAdding.resources

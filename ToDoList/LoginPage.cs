@@ -34,7 +34,8 @@ namespace ToDoList
 
             if (user != null && user.Password == password)
             {
-                TodoPage todoPage = new TodoPage(user);
+                SessionManager.Login(user);
+                TodoPage todoPage = new TodoPage();
                 todoPage.Show();
                 this.Hide();
             }
