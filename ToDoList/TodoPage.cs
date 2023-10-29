@@ -26,29 +26,8 @@ namespace ToDoList
             InitializeComponent();
         }
 
-        private void AjouterTache(Task task, FlowLayoutPanel panel)
-        {
-            tasks.Add(task);
 
-            Panel taskPanel = new Panel();
-            taskPanel.BackColor = Color.White;
-            taskPanel.Margin = new Padding(10);
-
-            Label lblTitle = new Label();
-            lblTitle.Text = task.Title;
-            lblTitle.Font = new Font("Arial", 12, FontStyle.Bold);
-
-            Label lblDescription = new Label();
-            lblDescription.Text = task.Description;
-
-
-            taskPanel.Controls.Add(lblTitle);
-            taskPanel.Controls.Add(lblDescription);
-
-            panel.Controls.Add(taskPanel);
-        }
-
-        private void AfficherTaches()
+        private void ShowTasks()
         {
             flow_toDo.Controls.Clear();
             flow_inProgress.Controls.Clear();
@@ -58,19 +37,28 @@ namespace ToDoList
             {
                 Panel taskPanel = new Panel();
                 taskPanel.BackColor = Color.White;
-                taskPanel.Margin = new Padding(10);
-
+                taskPanel.Size = new Size(225, 85);
+                taskPanel.Margin = new Padding(9);
 
                 Label lblTitle = new Label();
                 lblTitle.Text = task.Title;
-                lblTitle.Font = new Font("Arial", 12, FontStyle.Bold);
+                lblTitle.Font = new Font("Lucida Console", 12, FontStyle.Bold);
+                lblTitle.Width = 100;
 
                 Label lblDescription = new Label();
                 lblDescription.Text = task.Description;
+                lblDescription.Font = new Font("Lucida Console", 9, FontStyle.Regular);
+                lblDescription.Width = 100;
+
+                Label lblDueDate = new Label();
+                lblDueDate.Text = task.DueDate.ToString("MM/dd/yyyy");
+                lblDueDate.Font = new Font("Lucida Console", 9, FontStyle.Regular);
+                lblDueDate.Width = 100;
 
 
                 taskPanel.Controls.Add(lblTitle);
                 taskPanel.Controls.Add(lblDescription);
+                taskPanel.Controls.Add(lblDueDate);
 
                 if (task.Status == 0)
                 {
@@ -95,7 +83,7 @@ namespace ToDoList
                 DBuser db = new DBuser();
                 tasks = db.GetTasksForUser(currentUser.Id);
 
-                AfficherTaches();
+                ShowTasks();
             }
         }
         private void TodoPage_Activated(object sender, EventArgs e)
@@ -122,6 +110,5 @@ namespace ToDoList
             this.Hide();
         }
 
- 
     }
 }

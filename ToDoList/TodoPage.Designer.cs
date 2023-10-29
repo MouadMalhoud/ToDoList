@@ -84,6 +84,7 @@
             flow_done.Name = "flow_done";
             flow_done.Size = new Size(254, 528);
             flow_done.TabIndex = 5;
+
             // 
             // btn_addTask
             // 
