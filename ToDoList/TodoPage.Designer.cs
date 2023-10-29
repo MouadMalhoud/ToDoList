@@ -59,6 +59,7 @@
             btn_logout.Size = new Size(86, 82);
             btn_logout.TabIndex = 3;
             btn_logout.UseVisualStyleBackColor = true;
+            btn_logout.Click += btn_logout_Click;
             // 
             // flow_toDo
             // 

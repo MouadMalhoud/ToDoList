@@ -41,7 +41,15 @@ namespace ToDoList
         {
             TaskAdding taskAdding = new TaskAdding();
             taskAdding.Show();
-                
+
+            this.Hide();
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            SessionManager.Logout();
+            LandingPage landingPage = new LandingPage();
+            landingPage.Show();
             this.Hide();
         }
     }
