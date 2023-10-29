@@ -26,13 +26,13 @@ namespace ToDoList
 
             if (!string.IsNullOrEmpty(title) && !string.IsNullOrEmpty(description))
             {
-                Task newTask = new Task(title, description, dueDate, index);
 
                 DBuser db = new DBuser();
 
                 if (SessionManager.CurrentUser != null)
                 {
                     string userId = SessionManager.CurrentUser.Id;
+                    Task newTask = new Task(title, description, dueDate, index, userId);
                     db.AddTask(userId, newTask);
 
                     txt_taskName.Text = "";

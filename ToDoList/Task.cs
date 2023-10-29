@@ -1,5 +1,4 @@
-﻿using System;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace ToDoList
@@ -7,18 +6,20 @@ namespace ToDoList
     public class Task
     {
         [BsonId]
-        private ObjectId Id { get; set; }
-        private string Title { get; set; }
-        private string Description { get; set; }
-        private DateTime DueDate { get; set; }
-        private int Status { get; set; }
+        public ObjectId Id { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public DateTime DueDate { get; set; }
+        public int Status { get; set; }
+        public string UserId { get; set; } 
 
-        public Task(string title, string description, DateTime dueDate, int status)
+        public Task(string title, string description, DateTime dueDate, int status, string userId)
         {
             Title = title;
             Description = description;
             DueDate = dueDate;
             Status = status;
+            UserId = userId; 
         }
 
         public void MarkAsCompleted()
