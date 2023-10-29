@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "TodoPage";
+            SuspendLayout();
+            // 
+            // TodoPage
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Bisque;
+            ClientSize = new Size(1107, 652);
+            ForeColor = SystemColors.ActiveCaption;
+            Name = "TodoPage";
+            Text = "TodoPage";
+            ResumeLayout(false);
         }
 
         #endregion

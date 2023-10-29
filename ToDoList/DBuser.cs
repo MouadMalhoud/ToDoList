@@ -11,7 +11,7 @@ namespace ToDoList
 
         public DBuser()
         {
-            client = new MongoClient();//Put your mongodbString
+            client = new MongoClient("mongodb+srv://admo:admo123@cluster0.xsbj1aa.mongodb.net/Todolist?retryWrites=true&w=majority");//Put your mongodbString
             database = client.GetDatabase("Todolist");
             collection = database.GetCollection<User>("Users");
         }
