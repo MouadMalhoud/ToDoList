@@ -10,9 +10,6 @@
     <Compile Update="SignupPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Todo.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="TodoPage.cs">
       <SubType>Form</SubType>
     </Compile>
