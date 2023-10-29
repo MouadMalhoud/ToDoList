@@ -40,6 +40,7 @@ namespace ToDoList
                     dateTimePicker.Value = DateTime.Now;
 
                     TodoPage todoPage = new TodoPage();
+
                     todoPage.Show();
                     this.Hide();
                 }

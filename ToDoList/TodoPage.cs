@@ -88,15 +88,16 @@ namespace ToDoList
         }
         private void LoadTasksFromDB()
         {
+            if (SessionManager.CurrentUser != null)
+            {
+                User currentUser = SessionManager.CurrentUser;
 
-            
-                if (SessionManager.CurrentUser != null)
-                {
-                    User currentUser = SessionManager.CurrentUser;
-                    tasks = currentUser.Tasks;
-                    AfficherTaches(); 
-                }
+                DBuser db = new DBuser();
+                tasks = db.GetTasksForUser(currentUser.Id);
+
+                AfficherTaches();
             }
+        }
         
         private void TodoPage_Load(object sender, EventArgs e)
         {

@@ -25,7 +25,15 @@ namespace ToDoList
             var update = Builders<User>.Update.Push(u => u.Tasks, task);
             collection.UpdateOne(filter, update);
         }
+        public List<Task> GetTasksForUser(string userId)
+        {
+            IMongoCollection<Task> taskCollection = database.GetCollection<Task>("Tasks");
 
+            var filter = Builders<Task>.Filter.Eq("UserId", userId); 
+
+            List<Task> userTasks = taskCollection.Find(filter).ToList();
+            return userTasks;
+        }
         public void CreateUser(User user)
         {
             collection.InsertOne(user);
