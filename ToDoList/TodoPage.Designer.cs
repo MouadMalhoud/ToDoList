@@ -63,6 +63,7 @@
             // 
             // flow_toDo
             // 
+            flow_toDo.BackColor = Color.SteelBlue;
             flow_toDo.Location = new Point(83, 94);
             flow_toDo.Name = "flow_toDo";
             flow_toDo.Size = new Size(254, 528);
@@ -70,6 +71,7 @@
             // 
             // flow_inProgress
             // 
+            flow_inProgress.BackColor = Color.Orange;
             flow_inProgress.Location = new Point(415, 94);
             flow_inProgress.Name = "flow_inProgress";
             flow_inProgress.Size = new Size(254, 528);
@@ -77,6 +79,7 @@
             // 
             // flow_done
             // 
+            flow_done.BackColor = Color.Chartreuse;
             flow_done.Location = new Point(750, 94);
             flow_done.Name = "flow_done";
             flow_done.Size = new Size(254, 528);
@@ -120,6 +123,7 @@
             ForeColor = SystemColors.ActiveCaption;
             Name = "TodoPage";
             Text = "TodoPage";
+            Load += TodoPage_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Serialization;
-
 
 namespace ToDoList
 {
@@ -25,23 +23,91 @@ namespace ToDoList
         public TodoPage(User user)
         {
             this.user = user;
+            InitializeComponent();
         }
+
         private void AjouterTache(Task task, FlowLayoutPanel panel)
         {
             tasks.Add(task);
 
             Panel taskPanel = new Panel();
-            // Personnalisez le panneau pour afficher les informations de la tâche
+            taskPanel.BackColor = Color.White;
+            taskPanel.Margin = new Padding(10);
 
-            // Ajoutez le panneau au FlowLayoutPanel
+            Label lblTitle = new Label();
+            lblTitle.Text = task.Title;
+            lblTitle.Font = new Font("Arial", 12, FontStyle.Bold);
+
+            Label lblDescription = new Label();
+            lblDescription.Text = task.Description;
+
+
+            taskPanel.Controls.Add(lblTitle);
+            taskPanel.Controls.Add(lblDescription);
+
             panel.Controls.Add(taskPanel);
+        }
+
+        private void AfficherTaches()
+        {
+            flow_toDo.Controls.Clear();
+            flow_inProgress.Controls.Clear();
+            flow_done.Controls.Clear();
+
+            foreach (var task in tasks)
+            {
+                Panel taskPanel = new Panel();
+                taskPanel.BackColor = Color.White;
+                taskPanel.Margin = new Padding(10);
+
+
+                Label lblTitle = new Label();
+                lblTitle.Text = task.Title;
+                lblTitle.Font = new Font("Arial", 12, FontStyle.Bold);
+
+                Label lblDescription = new Label();
+                lblDescription.Text = task.Description;
+
+
+                taskPanel.Controls.Add(lblTitle);
+                taskPanel.Controls.Add(lblDescription);
+
+                if (task.Status == 0)
+                {
+                    flow_toDo.Controls.Add(taskPanel);
+                }
+                else if (task.Status == 1)
+                {
+                    flow_inProgress.Controls.Add(taskPanel);
+                }
+                else if (task.Status == 2)
+                {
+                    flow_done.Controls.Add(taskPanel);
+                }
+            }
+        }
+        private void LoadTasksFromDB()
+        {
+
+            
+                if (SessionManager.CurrentUser != null)
+                {
+                    User currentUser = SessionManager.CurrentUser;
+                    tasks = currentUser.Tasks;
+                    AfficherTaches(); 
+                }
+            }
+        
+        private void TodoPage_Load(object sender, EventArgs e)
+        {
+            //lbl_nomUtilisateur.Text = "Welcome back " + user.Username;
+            LoadTasksFromDB();
         }
 
         private void btn_addTask_Click(object sender, EventArgs e)
         {
             TaskAdding taskAdding = new TaskAdding();
             taskAdding.Show();
-
             this.Hide();
         }
 
@@ -52,5 +118,7 @@ namespace ToDoList
             landingPage.Show();
             this.Hide();
         }
+
+ 
     }
 }
