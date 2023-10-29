@@ -57,7 +57,7 @@ namespace ToDoList
         {
             LandingPage landingPage = new LandingPage();
             landingPage.Show();
-            this.Hide();
+            this.Close();
         }
         private bool IsEmailValid(string email)
         {

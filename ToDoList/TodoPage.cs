@@ -86,7 +86,7 @@ namespace ToDoList
                 }
             }
         }
-        private void LoadTasksFromDB()
+        public void LoadTasksFromDB()
         {
             if (SessionManager.CurrentUser != null)
             {
@@ -98,7 +98,10 @@ namespace ToDoList
                 AfficherTaches();
             }
         }
-        
+        private void TodoPage_Activated(object sender, EventArgs e)
+        {
+            LoadTasksFromDB();
+        }
         private void TodoPage_Load(object sender, EventArgs e)
         {
             //lbl_nomUtilisateur.Text = "Welcome back " + user.Username;
@@ -107,9 +110,8 @@ namespace ToDoList
 
         private void btn_addTask_Click(object sender, EventArgs e)
         {
-            TaskAdding taskAdding = new TaskAdding();
+            TaskAdding taskAdding = new TaskAdding(this);
             taskAdding.Show();
-            this.Hide();
         }
 
         private void btn_logout_Click(object sender, EventArgs e)

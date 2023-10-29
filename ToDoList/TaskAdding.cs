@@ -12,9 +12,12 @@ namespace ToDoList
 {
     public partial class TaskAdding : Form
     {
-        public TaskAdding()
+        private TodoPage parentForm;
+
+        public TaskAdding(TodoPage parentForm)
         {
             InitializeComponent();
+            this.parentForm = parentForm;
         }
 
         private void btn_addTask_Click(object sender, EventArgs e)
@@ -26,7 +29,6 @@ namespace ToDoList
 
             if (!string.IsNullOrEmpty(title) && !string.IsNullOrEmpty(description))
             {
-
                 DBuser db = new DBuser();
 
                 if (SessionManager.CurrentUser != null)
@@ -39,10 +41,9 @@ namespace ToDoList
                     txt_description.Text = "";
                     dateTimePicker.Value = DateTime.Now;
 
-                    TodoPage todoPage = new TodoPage();
+                    parentForm.LoadTasksFromDB();
 
-                    todoPage.Show();
-                    this.Hide();
+                    this.Close();
                 }
                 else
                 {

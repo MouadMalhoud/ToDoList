@@ -37,7 +37,7 @@ namespace ToDoList
                 SessionManager.Login(user);
                 TodoPage todoPage = new TodoPage();
                 todoPage.Show();
-                this.Hide();
+                this.Close();
             }
             else
             {
